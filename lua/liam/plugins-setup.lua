@@ -134,6 +134,12 @@ return packer.startup(function(use)
 	-- Lazy git
 	use("kdheepak/lazygit.nvim")
 
+	-- spectire find and replace
+	use("windwp/nvim-spectre")
+
+	-- mark
+	use("chentoast/marks.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
