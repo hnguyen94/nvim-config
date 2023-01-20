@@ -1,7 +1,10 @@
-local status, _ = pcall(vim.cmd, "colorscheme material")
+local status, _ = pcall(vim.cmd, "colorscheme onedark")
 if not status then
 	print("Colorscheme not found!")
 	return
 end
 
-vim.g.material_style = "deep ocean"
+require("onedark").setup({
+	style = "cool",
+})
+require("onedark").load()

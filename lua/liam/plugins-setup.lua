@@ -30,7 +30,9 @@ end
 return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
-	use("marko-cerovac/material.nvim")
+
+	-- theme
+	use("navarasu/onedark.nvim")
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
