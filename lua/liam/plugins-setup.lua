@@ -129,6 +129,9 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Lazy git
+	use("kdheepak/lazygit.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
