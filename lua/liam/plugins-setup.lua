@@ -114,6 +114,21 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- indent line
+	use("lukas-reineke/indent-blankline.nvim")
+
+	-- change ui
+	use({ "stevearc/dressing.nvim" })
+
+	-- keymap
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
