@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["calendar-vim"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/calendar-vim",
+    url = "https://github.com/renerocksai/calendar-vim"
+  },
   ["cheatsheet.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim",
@@ -241,6 +246,11 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["telekasten.nvim"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/telekasten.nvim",
+    url = "https://github.com/renerocksai/telekasten.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -270,6 +280,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-surround"] = {
     loaded = true,

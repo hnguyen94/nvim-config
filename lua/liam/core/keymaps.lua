@@ -46,3 +46,12 @@ keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 
 -- Spectre S
 keymap.set("n", "<leader>fr", ":Spectre<CR>")
+keymap.set("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<cr>")
+keymap.set("n", "<leader>sf", ":lua require('spectre').open_file_search()<cr>")
+
+-- Telekasten
+keymap.set("n", "<leader>zp", "<cmd>lua require('telekasten').panel()<cr>")
+keymap.set("n", "<leader>zf", "<cmd>lua require('telekasten').find_notes()<cr>")
+keymap.set("n", "<leader>zd", "<cmd>lua require('telekasten').find_daily_notes()<cr>")
+keymap.set("n", "<leader>zg", "<cmd>lua require('telekasten').search_notes()<cr>")
+keymap.set("n", "<leader>zz", "<cmd>lua require('telekasten').follow_link()<cr>")

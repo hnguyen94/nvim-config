@@ -52,6 +52,8 @@ return packer.startup(function(use)
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
 
+	-- repleat plugin command
+	use("tpope/vim-repeat")
 	-- vs-code like icons
 	use("nvim-tree/nvim-web-devicons")
 
@@ -139,6 +141,12 @@ return packer.startup(function(use)
 
 	-- mark
 	use("chentoast/marks.nvim")
+
+	-- Taking notes
+	use("renerocksai/telekasten.nvim")
+	use("renerocksai/calendar-vim")
+	-- use("nvim-neorg/neorg")
+	-- use("nvim-orgmode/orgmode")
 
 	if packer_bootstrap then
 		require("packer").sync()
