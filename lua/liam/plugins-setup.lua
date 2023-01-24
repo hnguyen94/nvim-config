@@ -94,6 +94,9 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+	-- wilder fuzzy find command
+	use("gelguy/wilder.nvim")
+
 	-- treesitter configuration
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -150,8 +153,10 @@ return packer.startup(function(use)
 	-- Taking notes
 	use("renerocksai/telekasten.nvim")
 	use("renerocksai/calendar-vim")
-	-- use("nvim-neorg/neorg")
 	-- use("nvim-orgmode/orgmode")
+
+	-- zen mode
+	use("folke/zen-mode.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
