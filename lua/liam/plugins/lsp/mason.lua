@@ -25,15 +25,15 @@ mason_lspconfig.setup({
 		"tsserver",
 		"html",
 		"cssls",
-		-- "tailwindcss",
+		"tailwindcss",
 		"sumneko_lua",
 		"emmet_ls",
 		"elixirls",
-		-- "graphql",
+		"graphql",
 		"jsonls",
-		-- "marksman", -- markdown
+		"marksman", -- markdown
 		"jedi_language_server", -- python
-		--"solargraph",
+		-- "solargraph",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
