@@ -20,6 +20,15 @@ vim.cmd([[
   augroup end
 ]])
 
+-- Config for startify
+vim.cmd([[
+  let g:startify_session_persistence = 1
+]])
+
+vim.cmd([[
+  let g:startify_lists = [ { 'type': 'dir',       'header': ['   Recent files'] }, { 'type': 'sessions',  'header': ['   Saved sessions'] }, ]
+]])
+
 -- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
@@ -64,6 +73,11 @@ return packer.startup(function(use)
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
+
+	-- sessions
+	use("mhinz/vim-startify")
+
+	-- use("echasnovski/mini.nvim")
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
