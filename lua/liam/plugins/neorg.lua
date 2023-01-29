@@ -7,11 +7,20 @@ neorg.setup({
 	load = {
 		["core.defaults"] = {},
 		["core.norg.concealer"] = {},
-		["core.norg.completion"] = {},
+		["core.norg.completion"] = {
+			config = {
+				engine = "nvim-cmp",
+			},
+		},
+		["core.keybinds"] = {
+			config = {
+				default_keybinds = true,
+			},
+		},
 		["core.norg.dirman"] = {
 			config = {
 				workspaces = {
-					home = "~/Notes/",
+					home = "~/Documents/Neorg/home",
 				},
 			},
 		},

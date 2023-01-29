@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
+  ["elixir.nvim"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/elixir.nvim",
+    url = "https://github.com/mhanberg/elixir.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -129,10 +134,10 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["indent-blankline.nvim"] = {
+  ["headlines.nvim"] = {
     loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/headlines.nvim",
+    url = "https://github.com/lukas-reineke/headlines.nvim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
@@ -179,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  neorg = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/neorg",
+    url = "https://github.com/nvim-neorg/neorg"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -198,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-spectre"] = {
     loaded = true,
@@ -231,6 +246,16 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
   },
+  ["org-bullets.nvim"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/org-bullets.nvim",
+    url = "https://github.com/akinsho/org-bullets.nvim"
+  },
+  orgmode = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -245,6 +270,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  sniprun = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/sniprun",
+    url = "https://github.com/michaelb/sniprun"
   },
   ["telekasten.nvim"] = {
     loaded = true,

@@ -16,7 +16,7 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
--- cursor line 
+-- cursor line
 opt.cursorline = true
 
 -- appearance
@@ -33,5 +33,8 @@ opt.clipboard:append("unnamedplus")
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
+
+-- date
+vim.cmd("language en_AU.UTF-8")
 
 opt.iskeyword:append("-")

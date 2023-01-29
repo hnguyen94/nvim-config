@@ -14,6 +14,12 @@ end
 telescope.setup({
 	-- configure custom mappings
 	defaults = {
+		sorting_strategy = "ascending",
+		layout_config = {
+			horizontal = {
+				prompt_position = "top",
+			},
+		},
 		mappings = {
 			i = {
 				["<C-k>"] = actions.move_selection_previous, -- move to prev result

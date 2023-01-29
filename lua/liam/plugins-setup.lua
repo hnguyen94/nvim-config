@@ -1,3 +1,4 @@
+-- Hello world
 -- auto install packer if not installed
 local ensure_packer = function()
 	local fn = vim.fn
@@ -56,6 +57,16 @@ return packer.startup(function(use)
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
+	-- use({
+	-- 	"Pocco81/auto-save.nvim",
+	-- 	config = function()
+	-- 		require("auto-save").setup({
+	-- 			-- your config goes here
+	-- 			-- or just leave it empty :)
+	-- 		})
+	-- 	end,
+	-- })
+
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
@@ -78,6 +89,7 @@ return packer.startup(function(use)
 	use("mhinz/vim-startify")
 
 	-- use("echasnovski/mini.nvim")
+	use("rcarriga/nvim-notify")
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -103,6 +115,9 @@ return packer.startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+	-- elixir
+	use({ "mhanberg/elixir.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
@@ -141,7 +156,7 @@ return packer.startup(function(use)
 	})
 
 	-- indent line
-	use("lukas-reineke/indent-blankline.nvim")
+	-- use("lukas-reineke/indent-blankline.nvim")
 
 	-- change ui
 	use({ "stevearc/dressing.nvim" })
@@ -167,7 +182,11 @@ return packer.startup(function(use)
 	-- Taking notes
 	use("renerocksai/telekasten.nvim")
 	use("renerocksai/calendar-vim")
-	-- use("nvim-orgmode/orgmode")
+	use("nvim-orgmode/orgmode")
+	use("nvim-neorg/neorg")
+	use({ "michaelb/sniprun", run = "bash ./install.sh" })
+	use("akinsho/org-bullets.nvim")
+	use("lukas-reineke/headlines.nvim")
 
 	-- zen mode
 	use("folke/zen-mode.nvim")
