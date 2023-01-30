@@ -104,6 +104,7 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
+	use("mattn/emmet-vim")
 
 	-- managing & installing lsp servers, linters & formatters
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
@@ -169,6 +170,8 @@ return packer.startup(function(use)
 			vim.o.timeoutlen = 300
 		end,
 	})
+
+	use("mrjones2014/legendary.nvim")
 
 	-- Lazy git
 	use("kdheepak/lazygit.nvim")

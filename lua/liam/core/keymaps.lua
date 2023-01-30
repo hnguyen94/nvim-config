@@ -9,16 +9,19 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
-keymap.set("n", "<leader>tt", ":tabnew<CR>") -- open new tab
+keymap.set("n", "<leader>tn", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>t]", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>t[", ":tabp<CR>") -- go to previous tab
+
+-- terminal call shortcuts
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<CR>") -- open new tab
+keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>") -- open new tab
 
 -- terminal
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
 	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-	vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
 	vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
 	vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
 	vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
@@ -62,7 +65,7 @@ keymap.set("n", "<leader>Sq", "<cmd>SClose<cr>")
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 -- lazygit
--- keymap.set("n", "<leader>lg", ":LazyGit<CR>")
+keymap.set("n", "<leader>lg", ":LazyGit<CR>")
 
 -- Spectre S
 keymap.set("n", "<leader>sr", ":Spectre<CR>")

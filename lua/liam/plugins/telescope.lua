@@ -14,6 +14,7 @@ end
 telescope.setup({
 	-- configure custom mappings
 	defaults = {
+		file_ignore_patterns = { "deps" },
 		sorting_strategy = "ascending",
 		layout_config = {
 			horizontal = {
