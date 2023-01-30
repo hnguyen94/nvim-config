@@ -184,7 +184,7 @@ return packer.startup(function(use)
 
 	-- Taking notes
 	use("renerocksai/telekasten.nvim")
-	use("renerocksai/calendar-vim")
+	-- use("renerocksai/calendar-vim")
 	use("nvim-orgmode/orgmode")
 	use("nvim-neorg/neorg")
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })

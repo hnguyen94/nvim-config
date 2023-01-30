@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["calendar-vim"] = {
-    loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/calendar-vim",
-    url = "https://github.com/renerocksai/calendar-vim"
-  },
   ["cheatsheet.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim",

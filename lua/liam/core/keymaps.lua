@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
--- general keymaps
+-- Core keymaps
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 keymap.set("n", "x", '"_x')
@@ -9,14 +9,132 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
-keymap.set("n", "<leader>tn", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>t]", ":tabn<CR>") -- go to next tab
-keymap.set("n", "<leader>t[", ":tabp<CR>") -- go to previous tab
+local status, legendary = pcall(require, "legendary")
+if not status then
+	return
+end
 
--- terminal call shortcuts
-keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<CR>") -- open new tab
-keymap.set("n", "<leader>tf", "<cmd>ToggleTerm direction=float<CR>") -- open new tab
+legendary.setup({
+	keymaps = {
+		-- Legendary
+		{ "<leader>/", ":Legendary<cr>", description = "Open Legendary panep" },
+		{
+			itemgroup = "Tab management",
+			keymaps = {
+				{ "<leader>tn", ":tabnew<CR>", description = "Open new tab" },
+				{ "<leader>tx", ":tabclose<CR>", description = "Close current tab" },
+				{ "<leader>t]", ":tabn<CR>", description = "Go to next tab" },
+				{ "<leader>t[", ":tabp<CR>", description = "Go to previous tab" },
+			},
+		},
+
+		-- Terminal
+		{ "<leader>tt", ":ToggleTerm direction=tab<CR>", description = "Open terminal in new tab" },
+		{ "<leader>tf", ":ToggleTerm direction=float<CR>", description = "Open terminal in float" },
+
+		-- Window management
+		{ "<C-w>m", ":MaximizerToggle<cr>", description = "Maximize current window" },
+		{ "<leader>w", ":close<cr>", description = "Close window" },
+
+		-- Nerd tree
+		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree" },
+		{ "<leader>J", ":NvimTreeFindFile<cr>", description = "Highlight current file in Nerdtree" },
+
+		{
+			itemgroup = "Telescope",
+			keymaps = {
+				{ "<leader>ff", ":Telescope find_files<cr>", description = "Find files" },
+				{ "<leader>fs", ":Telescope live_grep<cr>", description = "Find string in current working directory" },
+				{
+					"<leader>fc",
+					":Telescope grep_string<cr>",
+					description = "Find string under cursor in current working directory",
+				},
+				{ "<leader>fb", ":Telescope buffers<cr>", description = "List open buffers in currrent instance" },
+				{ "<leader>fh", ":Telescope help_tags<cr>", description = "List available help tags" },
+				{ "<leader>fp", ":Telescope builtin<cr>", description = "List built in fuctions" },
+				{ "<leader>fo", ":lua require'telescope.builtin'.oldfiles{}<cr>", description = "List old files" },
+
+				-- Telescope git
+				{ "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits" },
+				{ "<leader>gfc", ":Telescope git_bcommits<cr>", description = "List git commits for current file" },
+				{ "<leader>gb", ":Telescope git_branches<cr>", description = "List git branches" },
+				{ "<leader>gs", ":Telescope git_status<cr>", description = "List current changes with diff preview" }, -- might not needed
+			},
+		},
+
+		{
+			itemgroup = "Startify",
+			keymaps = {
+				{ "<leader>Sl", ":SLoad<cr>", description = "Load session" },
+				{ "<leader>Sw", ":SSave<cr>", description = "Save session" },
+				{ "<leader>Sd", ":SDelete<cr>", description = "Delete session" },
+				{ "<leader>Sq", ":SClose<cr>", description = "Close session" },
+			},
+		},
+
+		{
+			itemgroup = "Spectre",
+			description = "Spectre is tool to find and replace string in working directory",
+			keymaps = {
+				{ "<leader>sr", ":Spectre<CR>", description = "Find and replace" },
+				{
+					"<leader>sw",
+					"<cmd>lua require('spectre').open_visual({select_word=true})<cr>",
+					description = "Find selected word",
+				},
+				{
+					"<leader>sf",
+					":lua require('spectre').open_file_search()<cr>",
+					description = "Find and replace in file",
+				},
+			},
+		},
+
+		{
+			itemgroup = "Telekasten",
+			description = "Telekasten is a quick note tool",
+			keymaps = {
+				{ "<leader>zp", ":lua require('telekasten').panel()<cr>", description = "Open Telekasten panel" },
+				{ "<leader>zf", ":lua require('telekasten').find_notes()<cr>", description = "Find notes" },
+				{ "<leader>zd", ":lua require('telekasten').find_daily_notes()<cr>", description = "Find daily notes" },
+				{
+					"<leader>zg",
+					":lua require('telekasten').search_notes()<cr>",
+					description = "Search string in notes",
+				},
+				{
+					"<leader>zz",
+					"<cmd>lua require('telekasten').follow_link()<cr>",
+					description = "Follow link in notes",
+				},
+			},
+		},
+
+		-- Lazy git
+		{ "<leader>lg", ":LazyGit<CR>", description = "Open Lazy Git" },
+
+		-- LSP
+		{
+			itemgroup = "LSP",
+			keymaps = {
+
+				{ "gf", ":Lspsaga lsp_finder<CR>", description = "Show definition and references" },
+				{ "gd", ":Lspsaga peek_definition<CR>", description = "Peek definition and make edits in window" },
+				{ "gi", ":lua vim.lsp.buf.implementation()<CR>", description = "Go to implementation" },
+				{ "<leader>ca", ":Lspsaga code_action<CR>", description = "Run code action" },
+				{ "<leader>rn", ":Lspsaga rename<CR>", description = "Smart rename action" },
+				{ "<leader>D", ":Lspsaga show_line_diagnostics<CR>", description = "Show line diagnostics" },
+				{ "<leader>d", ":Lspsaga show_cursor_diagnostics<CR>", description = "Show cursor diagnostics" },
+				{ "[d", ":Lspsaga diagnostic_jump_prev<CR>", description = "Jump to previous diagnostic" },
+				{ "]d", ":Lspsaga diagnostic_jump_next<CR>", description = "Jump to next diagnostic" },
+				{ "gI", ":Lspsaga hover_doc<CR>", description = "Show documentation under cursor" },
+			},
+		},
+	},
+})
+
+-- keymap.set("n", "gI", "<cmd>", opts) -- show documentation for what is under cursor
 
 -- terminal
 function _G.set_terminal_keymaps()
@@ -30,51 +148,3 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
--- vim maximizer
-keymap.set("n", "<C-w>m", ":MaximizerToggle<CR>")
-keymap.set("n", "<leader>w", ":close<CR>")
-
--- NerdTree
-keymap.set("n", "<leader>0", ":NvimTreeToggle<CR>")
-keymap.set("n", "<leader>)", ":NvimTreeFocus<CR>")
-keymap.set("n", "<leader>J", "<cmd>NvimTreeFindFile<cr>")
-
--- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-keymap.set("n", "<leader>fp", "<cmd>Telescope builtin<cr>") -- built in functions panel
-keymap.set("n", "<leader>fo", ":lua require'telescope.builtin'.oldfiles{}<cr>")
-
--- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
-
--- Startify sessions
-keymap.set("n", "<leader>Sl", "<cmd>SLoad<cr>")
-keymap.set("n", "<leader>Sw", "<cmd>SSave<cr>")
-keymap.set("n", "<leader>Sd", "<cmd>SDelete<cr>")
-keymap.set("n", "<leader>Sq", "<cmd>SClose<cr>")
-
--- restart lsp server (not on youtube nvim video)
-keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
--- lazygit
-keymap.set("n", "<leader>lg", ":LazyGit<CR>")
-
--- Spectre S
-keymap.set("n", "<leader>sr", ":Spectre<CR>")
-keymap.set("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<cr>")
-keymap.set("n", "<leader>sf", ":lua require('spectre').open_file_search()<cr>")
-
--- Telekasten
-keymap.set("n", "<leader>zp", "<cmd>lua require('telekasten').panel()<cr>")
-keymap.set("n", "<leader>zf", "<cmd>lua require('telekasten').find_notes()<cr>")
-keymap.set("n", "<leader>zd", "<cmd>lua require('telekasten').find_daily_notes()<cr>")
-keymap.set("n", "<leader>zg", "<cmd>lua require('telekasten').search_notes()<cr>")
-keymap.set("n", "<leader>zz", "<cmd>lua require('telekasten').follow_link()<cr>")
