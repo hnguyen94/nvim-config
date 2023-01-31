@@ -144,7 +144,27 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
 	-- word navigation
-	use("ggandor/lightspeed.nvim")
+
+	use({
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings()
+			-- The below settings make Leap's highlighting a bit closer to what you've been
+			-- used to in Lightspeed.
+			vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
+			vim.api.nvim_set_hl(0, "LeapLabelPrimary", { fg = "red", bold = true, nocombine = true })
+			vim.api.nvim_set_hl(0, "LeapLabelSecondary", { fg = "blue", bold = true, nocombine = true })
+			vim.api.nvim_set_hl(0, "LeapMatch", {
+				fg = "white", -- for light themes, set to 'black' or similar
+				bold = true,
+				nocombine = true,
+			})
+			-- keep old 'x' behaviour in visual mode
+			vim.keymap.del({ "x", "o" }, "x")
+			vim.keymap.del({ "x", "o" }, "X")
+			require("leap").opts.highlight_unlabeled_phase_one_targets = true
+		end,
+	})
 
 	use({
 		"sudormrfbin/cheatsheet.nvim",
@@ -186,13 +206,17 @@ return packer.startup(function(use)
 	use("renerocksai/telekasten.nvim")
 	-- use("renerocksai/calendar-vim")
 	use("nvim-orgmode/orgmode")
+
 	use("nvim-neorg/neorg")
+	use("nvim-neorg/neorg-telescope")
+
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	use("akinsho/org-bullets.nvim")
 	use("lukas-reineke/headlines.nvim")
 
 	-- zen mode
 	use("folke/zen-mode.nvim")
+	use({ "shortcuts/no-neck-pain.nvim" })
 
 	if packer_bootstrap then
 		require("packer").sync()

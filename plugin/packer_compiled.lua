@@ -144,15 +144,16 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["leap.nvim"] = {
+    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\tbold\2\afg\nwhite\14nocombine\2\14LeapMatch\1\0\3\tbold\2\afg\tblue\14nocombine\2\23LeapLabelSecondary\1\0\3\tbold\2\afg\bred\14nocombine\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["legendary.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/legendary.nvim",
     url = "https://github.com/mrjones2014/legendary.nvim"
-  },
-  ["lightspeed.nvim"] = {
-    loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
-    url = "https://github.com/ggandor/lightspeed.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -193,6 +194,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
+  },
+  ["neorg-telescope"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/neorg-telescope",
+    url = "https://github.com/nvim-neorg/neorg-telescope"
+  },
+  ["no-neck-pain.nvim"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
+    url = "https://github.com/shortcuts/no-neck-pain.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -354,6 +365,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nD\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0K\0\1\0\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
+-- Config for: leap.nvim
+time([[Config for leap.nvim]], true)
+try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\tbold\2\afg\nwhite\14nocombine\2\14LeapMatch\1\0\3\tbold\2\afg\tblue\14nocombine\2\23LeapLabelSecondary\1\0\3\tbold\2\afg\bred\14nocombine\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+time([[Config for leap.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
