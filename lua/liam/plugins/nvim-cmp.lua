@@ -31,7 +31,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 -- end
 
 local function has_words_before()
-	local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
@@ -48,7 +48,17 @@ cmp.setup({
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 		["<C-e>"] = cmp.mapping.abort(), -- close completion window
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		-- ["<CR>"] = cmp.mapping.confirm({ select = true }),
+		cmp.setup({
+			mapping = {
+				["<CR>"] = cmp.mapping.confirm({
+					-- this is the important line
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true,
+				}),
+			},
+		}),
+
 		-- Fix copilot_cmp
 		-- ["<Tab>"] = vim.schedule_wrap(function(fallback)
 		-- 	if cmp.visible() and has_words_before() then
