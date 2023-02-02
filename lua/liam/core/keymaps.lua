@@ -9,6 +9,9 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
+-- Emmet change leader key
+vim.g.user_emmet_leader_key = "<C-z>"
+
 local status, legendary = pcall(require, "legendary")
 if not status then
 	return
@@ -38,6 +41,7 @@ legendary.setup({
 
 		-- Nerd tree
 		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree" },
+		{ "<leader>)", ":NvimTreeToggle<CR>", description = "Focus Nerdtree" },
 		{ "<leader>J", ":NvimTreeFindFile<cr>", description = "Highlight current file in Nerdtree" },
 
 		{

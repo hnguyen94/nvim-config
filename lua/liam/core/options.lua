@@ -37,6 +37,10 @@ opt.splitbelow = true
 -- date
 vim.cmd("language en_AU.UTF-8")
 
+-- Comments, stop auto commenting in next line
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
 opt.iskeyword:append("-")
 
 -- Autosave when leave buffer

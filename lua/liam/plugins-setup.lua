@@ -119,6 +119,7 @@ return packer.startup(function(use)
 
 	-- elixir
 	use({ "mhanberg/elixir.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use("mhinz/vim-mix-format")
 
 	-- formatting & linting
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
