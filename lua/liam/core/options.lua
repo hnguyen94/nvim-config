@@ -51,3 +51,15 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 		end
 	end,
 })
+
+-- Autoformat when save buffer
+vim.cmd("let g:mix_format_on_save = 1")
+
+local lspkind = require("lspkind")
+lspkind.init({
+	symbol_map = {
+		Copilot = "",
+	},
+})
+
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })

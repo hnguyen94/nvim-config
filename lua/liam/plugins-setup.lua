@@ -125,6 +125,25 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+	--
+	use({ "zbirenbaum/copilot.lua" })
+
+	-- Fix copilot_cmp
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup({
+				method = "getCompletionsCycling",
+				formatters = {
+					label = require("copilot_cmp.format").format_label_text,
+					insert_text = require("copilot_cmp.format").format_insert_text,
+					preview = require("copilot_cmp.format").deindent,
+				},
+			})
+		end,
+	})
+
 	-- wilder fuzzy find command
 	use("gelguy/wilder.nvim")
 
