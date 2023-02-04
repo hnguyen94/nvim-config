@@ -1,7 +1,7 @@
-require("copilot").setup({
-	suggestion = { enabled = false },
-	panel = { enabled = false },
-})
+-- require("copilot").setup({
+-- 	suggestion = { enabled = false },
+-- 	panel = { enabled = false },
+-- })
 
 -- Recommended
 -- require("copilot_cmp").setup({
@@ -12,4 +12,3 @@ require("copilot").setup({
 -- 		preview = require("copilot_cmp.format").deindent,
 -- 	},
 -- })
-

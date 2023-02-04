@@ -109,18 +109,10 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["copilot-cmp"] = {
-    config = { "\27LJ\2\nŠ\2\0\0\a\0\r\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\6\0006\4\0\0'\6\4\0B\4\2\0029\4\5\4=\4\a\0036\4\0\0'\6\4\0B\4\2\0029\4\b\4=\4\t\0036\4\0\0'\6\4\0B\4\2\0029\4\n\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\15formatters\fpreview\rdeindent\16insert_text\23format_insert_text\nlabel\1\0\0\22format_label_text\23copilot_cmp.format\1\0\1\vmethod\26getCompletionsCycling\nsetup\16copilot_cmp\frequire\0" },
-    load_after = {},
+  ["copilot.vim"] = {
     loaded = true,
-    needs_bufread = false,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/opt/copilot-cmp",
-    url = "https://github.com/zbirenbaum/copilot-cmp"
-  },
-  ["copilot.lua"] = {
-    loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/copilot.lua",
-    url = "https://github.com/zbirenbaum/copilot.lua"
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -158,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["leap.nvim"] = {
-    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\tbold\2\afg\nwhite\14LeapMatch\1\0\3\14nocombine\2\tbold\2\afg\tblue\23LeapLabelSecondary\1\0\3\14nocombine\2\tbold\2\afg\bred\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
+    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\afg\nwhite\14nocombine\2\tbold\2\14LeapMatch\1\0\3\afg\tblue\14nocombine\2\tbold\2\23LeapLabelSecondary\1\0\3\afg\bred\14nocombine\2\tbold\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
@@ -379,22 +371,16 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: leap.nvim
-time([[Config for leap.nvim]], true)
-try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\tbold\2\afg\nwhite\14LeapMatch\1\0\3\14nocombine\2\tbold\2\afg\tblue\23LeapLabelSecondary\1\0\3\14nocombine\2\tbold\2\afg\bred\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
-time([[Config for leap.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nD\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0K\0\1\0\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
+-- Config for: leap.nvim
+time([[Config for leap.nvim]], true)
+try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\afg\nwhite\14nocombine\2\tbold\2\14LeapMatch\1\0\3\afg\tblue\14nocombine\2\tbold\2\23LeapLabelSecondary\1\0\3\afg\bred\14nocombine\2\tbold\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+time([[Config for leap.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd copilot.lua ]]
-vim.cmd [[ packadd copilot-cmp ]]
-
--- Config for: copilot-cmp
-try_loadstring("\27LJ\2\nŠ\2\0\0\a\0\r\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\6\0006\4\0\0'\6\4\0B\4\2\0029\4\5\4=\4\a\0036\4\0\0'\6\4\0B\4\2\0029\4\b\4=\4\t\0036\4\0\0'\6\4\0B\4\2\0029\4\n\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\15formatters\fpreview\rdeindent\16insert_text\23format_insert_text\nlabel\1\0\0\22format_label_text\23copilot_cmp.format\1\0\1\vmethod\26getCompletionsCycling\nsetup\16copilot_cmp\frequire\0", "config", "copilot-cmp")
-
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
 time([[Sequenced loading]], false)

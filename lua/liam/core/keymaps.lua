@@ -118,6 +118,13 @@ legendary.setup({
 		-- Lazy git
 		{ "<leader>lg", ":LazyGit<CR>", description = "Open Lazy Git" },
 
+		-- Github Copilot
+		{
+			"<C-Tab>",
+			{ i = "<esc>:Copilot panel<CR>" },
+			description = "Open Github Copilot panel",
+		},
+
 		-- LSP
 		{
 			itemgroup = "LSP",
@@ -137,8 +144,6 @@ legendary.setup({
 		},
 	},
 })
-
--- keymap.set("n", "gI", "<cmd>", opts) -- show documentation for what is under cursor
 
 -- terminal
 function _G.set_terminal_keymaps()
