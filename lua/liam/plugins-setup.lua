@@ -59,7 +59,7 @@ return packer.startup(function(use)
 
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
-	use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
+	-- use("inkarkat/vim-Re1laceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
@@ -154,8 +154,10 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
-	use("nvim-treesitter/nvim-treesitter-textobjects")
+	-- use("nvim-treesitter/nvim-treesitter-textobjects")
+	use("nvim-treesitter/nvim-treesitter-context")
 
+	use("RRethy/nvim-treesitter-textsubjects")
 	-- aut closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags

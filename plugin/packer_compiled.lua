@@ -260,10 +260,15 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-treesitter-textobjects"] = {
+  ["nvim-treesitter-context"] = {
     loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
+  ["nvim-treesitter-textsubjects"] = {
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textsubjects",
+    url = "https://github.com/RRethy/nvim-treesitter-textsubjects"
   },
   ["nvim-ts-autotag"] = {
     load_after = {},
@@ -337,11 +342,6 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
-  ["vim-ReplaceWithRegister"] = {
-    loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
-    url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
-  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/vim-maximizer",
@@ -386,14 +386,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\nD\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0K\0\1\0\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
 -- Config for: leap.nvim
 time([[Config for leap.nvim]], true)
 try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\tbold\2\afg\nwhite\14LeapMatch\1\0\3\14nocombine\2\tbold\2\afg\tblue\23LeapLabelSecondary\1\0\3\14nocombine\2\tbold\2\afg\bred\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
 time([[Config for leap.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nD\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0K\0\1\0\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

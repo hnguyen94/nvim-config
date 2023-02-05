@@ -130,8 +130,9 @@ legendary.setup({
 			itemgroup = "LSP",
 			keymaps = {
 
-				{ "gf", ":Lspsaga lsp_finder<CR>", description = "Show definition and references" },
+				{ "gh", ":Lspsaga lsp_finder<CR>", description = "Show definition and references" },
 				{ "gd", ":Lspsaga peek_definition<CR>", description = "Peek definition and make edits in window" },
+				{ "gD", ":Lspsaga goto_definition<CR>", description = "Go to definition" },
 				{ "gi", ":lua vim.lsp.buf.implementation()<CR>", description = "Go to implementation" },
 				{ "<leader>ca", ":Lspsaga code_action<CR>", description = "Run code action" },
 				{ "<leader>rn", ":Lspsaga rename<CR>", description = "Smart rename action" },
