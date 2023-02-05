@@ -57,16 +57,6 @@ return packer.startup(function(use)
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
-	-- use({
-	-- 	"Pocco81/auto-save.nvim",
-	-- 	config = function()
-	-- 		require("auto-save").setup({
-	-- 			-- your config goes here
-	-- 			-- or just leave it empty :)
-	-- 		})
-	-- 	end,
-	-- })
-
 	-- essential plugins
 	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
 	use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
@@ -88,8 +78,10 @@ return packer.startup(function(use)
 	-- sessions
 	use("mhinz/vim-startify")
 
-	-- use("echasnovski/mini.nvim")
+	use("echasnovski/mini.nvim")
 	use("rcarriga/nvim-notify")
+
+	use("karb94/neoscroll.nvim")
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -162,6 +154,7 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+	use("nvim-treesitter/nvim-treesitter-textobjects")
 
 	-- aut closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
