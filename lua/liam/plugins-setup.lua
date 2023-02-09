@@ -41,6 +41,11 @@ return packer.startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	use("dstein64/vim-startuptime")
+
+	-- Check start up time
+	use("lewis6991/impatient.nvim")
+
 	-- theme
 	use("navarasu/onedark.nvim")
 
@@ -75,9 +80,8 @@ return packer.startup(function(use)
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
 
-	-- sessions
+	-- start
 	use("mhinz/vim-startify")
-
 	use("echasnovski/mini.nvim")
 	use("rcarriga/nvim-notify")
 
@@ -227,7 +231,7 @@ return packer.startup(function(use)
 	-- Taking notes
 	use("renerocksai/telekasten.nvim")
 	-- use("renerocksai/calendar-vim")
-	use("nvim-orgmode/orgmode")
+	-- use("nvim-orgmode/orgmode")
 
 	use("nvim-neorg/neorg")
 	use("nvim-neorg/neorg-telescope")

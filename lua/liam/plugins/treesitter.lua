@@ -54,6 +54,7 @@ treesitter.setup({
 		"elixir",
 		"heex",
 		"eex",
+		"swift",
 	},
 	-- auto install above language parsers
 	auto_install = true,
