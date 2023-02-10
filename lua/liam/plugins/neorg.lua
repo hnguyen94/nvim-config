@@ -14,7 +14,7 @@ neorg.setup({
 			},
 		},
 		["core.keybinds"] = {
-			config = {
+      config = {
 				default_keybinds = true,
 				hook = function(keybinds)
 					keybinds.remap_event("norg", "n", "<leader>nn", "core.norg.dirman.new.note")

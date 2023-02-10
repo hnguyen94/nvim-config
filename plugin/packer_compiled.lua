@@ -155,7 +155,7 @@ _G.packer_plugins = {
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["leap.nvim"] = {
-    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\afg\nwhite\tbold\2\14nocombine\2\14LeapMatch\1\0\3\afg\tblue\tbold\2\14nocombine\2\23LeapLabelSecondary\1\0\3\afg\bred\tbold\2\14nocombine\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
+    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\tbold\2\afg\nwhite\14LeapMatch\1\0\3\14nocombine\2\tbold\2\afg\tblue\23LeapLabelSecondary\1\0\3\14nocombine\2\tbold\2\afg\bred\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
@@ -317,11 +317,6 @@ _G.packer_plugins = {
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
-  ["telekasten.nvim"] = {
-    loaded = true,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/telekasten.nvim",
-    url = "https://github.com/renerocksai/telekasten.nvim"
-  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -393,7 +388,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: leap.nvim
 time([[Config for leap.nvim]], true)
-try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\afg\nwhite\tbold\2\14nocombine\2\14LeapMatch\1\0\3\afg\tblue\tbold\2\14nocombine\2\23LeapLabelSecondary\1\0\3\afg\bred\tbold\2\14nocombine\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\tbold\2\afg\nwhite\14LeapMatch\1\0\3\14nocombine\2\tbold\2\afg\tblue\23LeapLabelSecondary\1\0\3\14nocombine\2\tbold\2\afg\bred\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
 time([[Config for leap.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)

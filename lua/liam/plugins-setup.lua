@@ -229,11 +229,11 @@ return packer.startup(function(use)
 	use("chentoast/marks.nvim")
 
 	-- Taking notes
-	use("renerocksai/telekasten.nvim")
+	-- use("renerocksai/telekasten.nvim")
 	-- use("renerocksai/calendar-vim")
 	-- use("nvim-orgmode/orgmode")
 
-	use("nvim-neorg/neorg")
+	use({ "nvim-neorg/neorg" })
 	use("nvim-neorg/neorg-telescope")
 
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
