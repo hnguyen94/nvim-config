@@ -44,7 +44,7 @@ treesitter.setup({
 		"html",
 		"css",
 		"markdown",
-		"markdown-inline",
+		"markdown_inline",
 		"graphql",
 		"bash",
 		"lua",
