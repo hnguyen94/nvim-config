@@ -95,6 +95,8 @@ return packer.startup(function(use)
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
+	use("hrsh7th/cmp-cmdline") -- source for file system paths
+	use("f3fora/cmp-spell") -- source for file system paths
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
@@ -112,6 +114,29 @@ return packer.startup(function(use)
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+	-- lsp plugins
+	use({
+		"simrat39/symbols-outline.nvim",
+		config = function()
+			require("symbols-outline").setup()
+		end,
+	})
+
+	-- Testing
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"antoinemadec/FixCursorHold.nvim",
+			"jfpedroza/neotest-elixir",
+		},
+	})
+
+	-- Visual mutli line
+	use("mg979/vim-visual-multi")
+	use("RRethy/vim-illuminate")
 
 	-- elixir
 	use({ "mhanberg/elixir.nvim", requires = { "nvim-lua/plenary.nvim" } })
@@ -148,8 +173,24 @@ return packer.startup(function(use)
 	-- })
 
 	-- wilder fuzzy find command
-	use("gelguy/wilder.nvim")
-
+	-- use("gelguy/wilder.nvim")
+	-- Packer
+	use({
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({
+				-- add any options here
+			})
+		end,
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	})
 	-- treesitter configuration
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -225,11 +266,14 @@ return packer.startup(function(use)
 	-- spectire find and replace
 	use("windwp/nvim-spectre")
 
-	-- mark
-	use("chentoast/marks.nvim")
+	-- harpoon
+	use("ThePrimeagen/harpoon")
 
 	-- Taking notes
-	-- use("renerocksai/telekasten.nvim")
+	use({
+		"renerocksai/telekasten.nvim",
+		disable = true,
+	})
 	-- use("renerocksai/calendar-vim")
 	-- use("nvim-orgmode/orgmode")
 

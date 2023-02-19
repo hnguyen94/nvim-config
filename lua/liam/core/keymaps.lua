@@ -9,6 +9,12 @@ keymap.set("n", "x", '"_x')
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
+keymap.set("i", "<C-h>", "<Left>")
+keymap.set("i", "<C-l>", "<Right>")
+
+keymap.set("i", "<C-b>", "<C-Left>")
+keymap.set("i", "<C-f>", "<C-Right>")
+
 -- Emmet change leader key
 vim.g.user_emmet_leader_key = "<C-z>"
 
@@ -21,13 +27,19 @@ legendary.setup({
 	keymaps = {
 		-- Legendary
 		{ "<leader>/", ":Legendary<cr>", description = "Open Legendary panep" },
+		{ ",a", "ggVG", description = "Select all" },
+		{
+			"<leader>bd",
+			":%bd|e#|bd#<cr>|'\"",
+			description = "Remove all buffers and jump back to my original cursor position.",
+		},
 		{
 			itemgroup = "Tab management",
 			keymaps = {
-				{ "<leader>tn", ":tabnew<CR>", description = "Open new tab" },
-				{ "<leader>tx", ":tabclose<CR>", description = "Close current tab" },
-				{ "<leader>t]", ":tabn<CR>", description = "Go to next tab" },
-				{ "<leader>t[", ":tabp<CR>", description = "Go to previous tab" },
+				{ ",tn", ":tabnew<CR>", description = "Open new tab" },
+				{ ",tx", ":tabclose<CR>", description = "Close current tab" },
+				{ ",t]", ":tabn<CR>", description = "Go to next tab" },
+				{ ",t[", ":tabp<CR>", description = "Go to previous tab" },
 			},
 		},
 
@@ -37,11 +49,11 @@ legendary.setup({
 
 		-- Window management
 		{ "<C-w>m", ":MaximizerToggle<cr>", description = "Maximize current window" },
-		{ "<leader>w", ":close<cr>", description = "Close window" },
+		{ ",w", ":close<cr>", description = "Close window" },
 
 		-- Nerd tree
 		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree" },
-		{ "<leader>)", ":NvimTreeToggle<CR>", description = "Focus Nerdtree" },
+		{ "<leader>)", ":NvimTreeFocus<CR>", description = "Focus Nerdtree" },
 		{ "<leader>J", ":NvimTreeFindFile<cr>", description = "Highlight current file in Nerdtree" },
 
 		{
@@ -81,14 +93,14 @@ legendary.setup({
 			itemgroup = "Spectre",
 			description = "Spectre is tool to find and replace string in working directory",
 			keymaps = {
-				{ "<leader>sr", ":Spectre<CR>", description = "Find and replace" },
+				{ ",fr", ":Spectre<CR>", description = "Find and replace" },
 				{
-					"<leader>sw",
+					",fw",
 					"<cmd>lua require('spectre').open_visual({select_word=true})<cr>",
 					description = "Find selected word",
 				},
 				{
-					"<leader>sf",
+					",ff",
 					":lua require('spectre').open_file_search()<cr>",
 					description = "Find and replace in file",
 				},
@@ -130,17 +142,58 @@ legendary.setup({
 			itemgroup = "LSP",
 			keymaps = {
 
-				{ "gr", ":Lspsaga lsp_finder<CR>", description = "Show definition and references" },
+				{ "gR", ":Lspsaga lsp_finder<CR>", description = "Show definition and references" },
 				{ "gd", ":Lspsaga peek_definition<CR>", description = "Peek definition and make edits in window" },
 				{ "gD", ":Lspsaga goto_definition<CR>", description = "Go to definition" },
 				{ "gi", ":lua vim.lsp.buf.implementation()<CR>", description = "Go to implementation" },
 				{ "<leader>ca", ":Lspsaga code_action<CR>", description = "Run code action" },
-				{ "<leader>rn", ":Lspsaga rename<CR>", description = "Smart rename action" },
+				{ "grn", ":Lspsaga rename<CR>", description = "Smart rename action" },
 				{ "<leader>D", ":Lspsaga show_line_diagnostics<CR>", description = "Show line diagnostics" },
 				{ "<leader>d", ":Lspsaga show_cursor_diagnostics<CR>", description = "Show cursor diagnostics" },
 				{ "[d", ":Lspsaga diagnostic_jump_prev<CR>", description = "Jump to previous diagnostic" },
 				{ "]d", ":Lspsaga diagnostic_jump_next<CR>", description = "Jump to next diagnostic" },
 				{ "gI", ":Lspsaga hover_doc<CR>", description = "Show documentation under cursor" },
+				{ "<C-s>", ":SymbolsOutline<CR>", description = "Toggle Symbols Outline" },
+			},
+		},
+
+		-- Harpoon
+		{
+			itemgroup = "Harpoon",
+			keymaps = {
+
+				{ "<leader>ha", ":lua require('harpoon.mark').add_file()<cr>", description = "Add file to harpoon" },
+				{
+					"<leader>ht",
+					":lua require('harpoon.ui').toggle_quick_menu()<cr>",
+					description = "Toggle Harpoon menu",
+				},
+				{ "<leader>h]", ":lua require('harpoon.ui').nav_next()<cr>", description = "Navigate next" },
+				{ "<leader>h[", ":lua require('harpoon.ui').nav_previous()<cr>", description = "Navigate previous" },
+			},
+		},
+
+		-- Neotest
+		{
+			itemgroup = "Neotest",
+			keymaps = {
+				{ "<leader>tr", ":lua require('neotest').run.run()<cr>", description = "Run nearest test" },
+				{ "<leader>tl", ":lua require('neotest').run.run_last()<cr>", description = "Run last test" },
+				{ "<leader>tx", ":lua require('neotest').run.stop()<cr>", description = "Stop testing" },
+				{ "<leader>to", ":lua require('neotest').output.open()<cr>", description = "Output" },
+				{
+					"<leader>tO",
+					":lua require('neotest').output_panel.toggle()<cr>",
+					description = " Test Output panel",
+				},
+				{ "<leader>ts", ":lua require('neotest').summary.toggle()<cr>", description = "Test Summary" },
+				-- { "<leader>Td", ":h neotest.diagnostic<cr>", description = "Test diagnostic" },
+				-- { "<leader>Ts", ":h neotest.status<cr>", description = "Test status sign" },
+				{
+					"<leader>tf",
+					":lua require('neotest').run.run(vim.fn.expand('%')) <cr>",
+					description = "Run current file",
+				},
 			},
 		},
 	},
