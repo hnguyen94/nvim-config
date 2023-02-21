@@ -44,8 +44,8 @@ legendary.setup({
 		},
 
 		-- Terminal
-		{ "<leader>tt", ":ToggleTerm direction=tab<CR>", description = "Open terminal in new tab" },
-		{ "<leader>tf", ":ToggleTerm direction=float<CR>", description = "Open terminal in float" },
+		{ "<leader>Tt", ":ToggleTerm direction=tab<CR>", description = "Open terminal in new tab" },
+		{ "<leader>Tf", ":ToggleTerm direction=float<CR>", description = "Open terminal in float" },
 
 		-- Window management
 		{ "<C-w>m", ":MaximizerToggle<cr>", description = "Maximize current window" },
@@ -55,6 +55,9 @@ legendary.setup({
 		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree" },
 		{ "<leader>)", ":NvimTreeFocus<CR>", description = "Focus Nerdtree" },
 		{ "<leader>J", ":NvimTreeFindFile<cr>", description = "Highlight current file in Nerdtree" },
+
+		-- Notification
+		{ ",h", ":lua require('notify').dismiss()<cr>", description = "Dismiss current notifications" },
 
 		{
 			itemgroup = "Telescope",
@@ -127,6 +130,9 @@ legendary.setup({
 			},
 		},
 
+		-- TODO-comment
+		{ "<leader>ft", ":TodoTelescope keywords=TODO,FIX,NOTE,BUG<cr>", description = "Find TODO comments" },
+
 		-- Lazy git
 		{ "<leader>lg", ":LazyGit<CR>", description = "Open Lazy Git" },
 
@@ -175,7 +181,7 @@ legendary.setup({
 
 		-- Neotest
 		{
-			itemgroup = "Neotest",
+			itemgroup = "NeoTest",
 			keymaps = {
 				{ "<leader>tr", ":lua require('neotest').run.run()<cr>", description = "Run nearest test" },
 				{ "<leader>tl", ":lua require('neotest').run.run_last()<cr>", description = "Run last test" },
@@ -194,6 +200,25 @@ legendary.setup({
 					":lua require('neotest').run.run(vim.fn.expand('%')) <cr>",
 					description = "Run current file",
 				},
+			},
+		},
+		{
+			itemgroup = "Trouble",
+			keymaps = {
+				{ "<leader>xx", ":TroubleToggle<cr>", description = "Toggle Trouble" },
+				{
+					"<leader>xw",
+					":TroubleToggle lsp_workspace_diagnostics<cr>",
+					description = "Toggle workspace diagnostics",
+				},
+				{
+					"<leader>xd",
+					":TroubleToggle lsp_document_diagnostics<cr>",
+					description = "Toggle document diagnostics",
+				},
+				{ "<leader>xl", ":TroubleToggle loclist<cr>", description = "Toggle loclist" },
+				{ "<leader>xq", ":TroubleToggle quickfix<cr>", description = "Toggle quickfix" },
+				{ "<leader>xR", ":TroubleToggle lsp_references<cr>", description = "Toggle references" },
 			},
 		},
 	},

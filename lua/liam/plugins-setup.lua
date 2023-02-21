@@ -39,7 +39,10 @@ end
 -- add list of plugins to install
 return packer.startup(function(use)
 	-- packer can manage itself
-	use("wbthomason/packer.nvim")
+	use({
+		"wbthomason/packer.nvim",
+		max_jobs = 5,
+	})
 
 	use("dstein64/vim-startuptime")
 
@@ -60,20 +63,20 @@ return packer.startup(function(use)
 	-- Tmux
 	-- use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
-	use("szw/vim-maximizer") -- maximizes and restores current window
+	use({ "szw/vim-maximizer", event = "VimEnter" }) -- maximizes and restores current window
 
 	-- essential plugins
-	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+	use({ "tpope/vim-surround", event = "VimEnter" }) -- add, delete, change surroundings (it's awesome)
 	-- use("inkarkat/vim-Re1laceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc
-	use("numToStr/Comment.nvim")
+	use({ "numToStr/Comment.nvim", event = "VimEnter" })
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	use({ "nvim-tree/nvim-tree.lua" })
 
 	-- repleat plugin command
-	use("tpope/vim-repeat")
+	use({ "tpope/vim-repeat", event = "VimEnter" })
 	-- vs-code like icons
 	use("nvim-tree/nvim-web-devicons")
 
@@ -85,24 +88,38 @@ return packer.startup(function(use)
 	use("echasnovski/mini.nvim")
 	use("rcarriga/nvim-notify")
 
-	use("karb94/neoscroll.nvim")
+	use({
+		"karb94/neoscroll.nvim",
+		config = function()
+			require("liam.plugins.neoscroll")
+		end,
+	})
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
-	-- autocompletion
-	use("hrsh7th/nvim-cmp") -- completion plugin
-	use("hrsh7th/cmp-buffer") -- source for text in buffer
-	use("hrsh7th/cmp-path") -- source for file system paths
-	use("hrsh7th/cmp-cmdline") -- source for file system paths
-	use("f3fora/cmp-spell") -- source for file system paths
+	-- CMP
+	use({
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		after = "friendly-snippets",
+		config = function()
+			require("liam.plugins.nvim-cmp")
+		end,
+	})
+
+	----[[   ]]} -- completion plugin
+	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" }) -- source for text in buffer
+	use({ "hrsh7th/cmp-path", after = "nvim-cmp" }) -- source for file system paths
+	use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" }) -- source for file system paths
+	use({ "f3fora/cmp-spell", after = "nvim-cmp" }) -- source for file system paths
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-	use("rafamadriz/friendly-snippets") -- useful snippets
-	use("mattn/emmet-vim")
+	use({ "rafamadriz/friendly-snippets", event = "InsertEnter" }) -- useful snippets
+	use({ "mattn/emmet-vim", after = "nvim-cmp" })
 
 	-- managing & installing lsp servers, linters & formatters
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
@@ -123,9 +140,41 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+	})
+
+	-- Trouble
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({})
+		end,
+	})
+
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
 	-- Testing
 	use({
 		"nvim-neotest/neotest",
+		event = "VimEnter",
+		config = function()
+			require("liam.plugins.neotest")
+		end,
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
@@ -135,7 +184,7 @@ return packer.startup(function(use)
 	})
 
 	-- Visual mutli line
-	use("mg979/vim-visual-multi")
+	use({ "mg979/vim-visual-multi", event = "VimEnter" })
 	use("RRethy/vim-illuminate")
 
 	-- elixir
@@ -146,41 +195,22 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
-	use("github/copilot.vim")
-	-- use({
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	cmd = "Copilot",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("copilot").setup({})
-	-- 	end,
-	-- })
-
-	-- Fix copilot_cmp
-	-- use({
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	after = { "copilot.lua" },
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup({
-	-- 			method = "getCompletionsCycling",
-	-- 			formatters = {
-	-- 				label = require("copilot_cmp.format").format_label_text,
-	-- 				insert_text = require("copilot_cmp.format").format_insert_text,
-	-- 				preview = require("copilot_cmp.format").deindent,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- })
+	use({
+		"github/copilot.vim",
+		config = function()
+			require("liam.plugins.copilot")
+		end,
+		event = "InsertEnter",
+	})
 
 	-- wilder fuzzy find command
 	-- use("gelguy/wilder.nvim")
+
 	-- Packer
 	use({
 		"folke/noice.nvim",
 		config = function()
-			require("noice").setup({
-				-- add any options here
-			})
+			require("liam.plugins.noice")
 		end,
 		requires = {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -189,6 +219,7 @@ return packer.startup(function(use)
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
+			"hrsh7th/nvim-cmp",
 		},
 	})
 	-- treesitter configuration
@@ -204,7 +235,7 @@ return packer.startup(function(use)
 
 	use("RRethy/nvim-treesitter-textsubjects")
 	-- aut closing
-	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+	use({ "windwp/nvim-autopairs", after = "nvim-cmp" }) -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
 	-- git integration
@@ -235,7 +266,6 @@ return packer.startup(function(use)
 
 	use({
 		"sudormrfbin/cheatsheet.nvim",
-
 		requires = {
 			{ "nvim-telescope/telescope.nvim" },
 			{ "nvim-lua/popup.nvim" },
@@ -274,19 +304,23 @@ return packer.startup(function(use)
 		"renerocksai/telekasten.nvim",
 		disable = true,
 	})
-	-- use("renerocksai/calendar-vim")
-	-- use("nvim-orgmode/orgmode")
 
-	use({ "nvim-neorg/neorg" })
-	use("nvim-neorg/neorg-telescope")
+	use({
+		event = "CmdlineEnter",
+		"nvim-neorg/neorg",
+		config = function()
+			require("liam.plugins.neorg")
+		end,
+	})
+	use({ "nvim-neorg/neorg-telescope" })
 
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	use("akinsho/org-bullets.nvim")
 	use("lukas-reineke/headlines.nvim")
 
 	-- zen mode
-	use("folke/zen-mode.nvim")
-	use({ "shortcuts/no-neck-pain.nvim" })
+	use({ "folke/zen-mode.nvim", event = "CmdlineEnter" })
+	use({ "shortcuts/no-neck-pain.nvim", event = "CmdlineEnter" })
 
 	if packer_bootstrap then
 		require("packer").sync()
