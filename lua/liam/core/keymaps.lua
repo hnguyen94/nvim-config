@@ -23,10 +23,12 @@ if not status then
 	return
 end
 
+local silent_opts = { silent = true }
+
 legendary.setup({
 	keymaps = {
 		-- Legendary
-		{ "<leader>/", ":Legendary<cr>", description = "Open Legendary panep" },
+		{ "<leader>/", ":Legendary<cr>", description = "Open Legendary panep", opts = silent_opts },
 		{ ",a", "ggVG", description = "Select all" },
 		{
 			"<leader>bd",
@@ -36,76 +38,131 @@ legendary.setup({
 		{
 			itemgroup = "Tab management",
 			keymaps = {
-				{ ",tn", ":tabnew<CR>", description = "Open new tab" },
-				{ ",tx", ":tabclose<CR>", description = "Close current tab" },
-				{ ",t]", ":tabn<CR>", description = "Go to next tab" },
-				{ ",t[", ":tabp<CR>", description = "Go to previous tab" },
+				{ ",tn", ":tabnew<CR>", description = "Open new tab", opts = silent_opts },
+				{ ",tx", ":tabclose<CR>", description = "Close current tab", opts = silent_opts },
+				{ ",t]", ":tabn<CR>", description = "Go to next tab", opts = silent_opts },
+				{ ",t[", ":tabp<CR>", description = "Go to previous tab", opts = silent_opts },
 			},
 		},
 
 		-- Terminal
-		{ "<leader>Tt", ":ToggleTerm direction=tab<CR>", description = "Open terminal in new tab" },
-		{ "<leader>Tf", ":ToggleTerm direction=float<CR>", description = "Open terminal in float" },
+		{
+			"<leader>Tt",
+			":ToggleTerm direction=tab<CR>",
+			description = "Open terminal in new tab",
+			opts = silent_opts,
+		},
+		{
+			"<leader>Tf",
+			":ToggleTerm direction=float<CR>",
+			description = "Open terminal in float",
+			opts = silent_opts,
+		},
 
 		-- Window management
 		{ "<C-w>m", ":MaximizerToggle<cr>", description = "Maximize current window" },
 		{ ",w", ":close<cr>", description = "Close window" },
 
 		-- Nerd tree
-		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree" },
-		{ "<leader>)", ":NvimTreeFocus<CR>", description = "Focus Nerdtree" },
-		{ "<leader>J", ":NvimTreeFindFile<cr>", description = "Highlight current file in Nerdtree" },
+		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree", opts = { silent = true } },
+		{ "<leader>1", ":NvimTreeFindFile<CR>", description = "Find file in Nerdtree", opts = { silent = true } },
+		{ "<leader>)", ":NvimTreeFocus<CR>", description = "Focus Nerdtree", opts = { silent = true } },
+		{
+			"<leader>J",
+			":NvimTreeFindFile<cr>",
+			description = "Highlight current file in Nerdtree",
+			opts = { silent = true },
+		},
 
 		-- Notification
-		{ ",h", ":lua require('notify').dismiss()<cr>", description = "Dismiss current notifications" },
+		{
+			",h",
+			":lua require('notify').dismiss()<cr>",
+			description = "Dismiss current notifications",
+			opts = silent_opts,
+		},
 
 		{
 			itemgroup = "Telescope",
 			keymaps = {
-				{ "<leader>ff", ":Telescope find_files<cr>", description = "Find files" },
-				{ "<leader>fs", ":Telescope live_grep<cr>", description = "Find string in current working directory" },
+				{ "<leader>ff", ":Telescope find_files<cr>", description = "Find files", opts = silent_opts },
+				{
+					"<leader>fs",
+					":Telescope live_grep<cr>",
+					description = "Find string in current working directory",
+					opts = silent_opts,
+				},
 				{
 					"<leader>fc",
 					":Telescope grep_string<cr>",
 					description = "Find string under cursor in current working directory",
+					opts = silent_opts,
 				},
-				{ "<leader>fb", ":Telescope buffers<cr>", description = "List open buffers in currrent instance" },
-				{ "<leader>fh", ":Telescope help_tags<cr>", description = "List available help tags" },
-				{ "<leader>fp", ":Telescope builtin<cr>", description = "List built in fuctions" },
-				{ "<leader>fo", ":lua require'telescope.builtin'.oldfiles{}<cr>", description = "List old files" },
+				{
+					"<leader>fb",
+					":Telescope buffers<cr>",
+					description = "List open buffers in currrent instance",
+					opts = silent_opts,
+				},
+				{
+					"<leader>fh",
+					":Telescope help_tags<cr>",
+					description = "List available help tags",
+					opts = silent_opts,
+				},
+				{ "<leader>fp", ":Telescope builtin<cr>", description = "List built in fuctions", opts = silent_opts },
+				{
+					"<leader>fo",
+					":lua require'telescope.builtin'.oldfiles{}<cr>",
+					description = "List old files",
+					opts = silent_opts,
+				},
 
 				-- Telescope git
-				{ "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits" },
-				{ "<leader>gfc", ":Telescope git_bcommits<cr>", description = "List git commits for current file" },
-				{ "<leader>gb", ":Telescope git_branches<cr>", description = "List git branches" },
-				{ "<leader>gs", ":Telescope git_status<cr>", description = "List current changes with diff preview" }, -- might not needed
+				{ "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits", opts = silent_opts },
+				{
+					"<leader>gfc",
+					":Telescope git_bcommits<cr>",
+					description = "List git commits for current file",
+					opts = silent_opts,
+				},
+				{ "<leader>gb", ":Telescope git_branches<cr>", description = "List git branches", opts = silent_opts },
+				{
+					"<leader>gs",
+					":Telescope git_status<cr>",
+					description = "List current changes with diff preview",
+					opts = silent_opts,
+				}, -- might not needed
 			},
 		},
 
 		{
 			itemgroup = "Startify",
 			keymaps = {
-				{ "<leader>Sl", ":SLoad<cr>", description = "Load session" },
-				{ "<leader>Sw", ":SSave<cr>", description = "Save session" },
-				{ "<leader>Sd", ":SDelete<cr>", description = "Delete session" },
-				{ "<leader>Sq", ":SClose<cr>", description = "Close session" },
+				{ "<leader>Sl", ":SLoad<cr>", description = "Load session", opts = silent_opts },
+				{ "<leader>Sw", ":SSave<cr>", description = "Save session", opts = silent_opts },
+				{ "<leader>Sd", ":SDelete<cr>", description = "Delete session", opts = silent_opts },
+				{ "<leader>Sq", ":SClose<cr>", description = "Close session", opts = silent_opts },
 			},
 		},
 
 		{
 			itemgroup = "Spectre",
 			description = "Spectre is tool to find and replace string in working directory",
+			opts = silent_opts,
 			keymaps = {
-				{ ",fr", ":Spectre<CR>", description = "Find and replace" },
+				{ ",fr", ":Spectre<CR>", description = "Find and replace", opts = silent_opts },
 				{
 					",fw",
 					"<cmd>lua require('spectre').open_visual({select_word=true})<cr>",
 					description = "Find selected word",
+					opts = silent_opts,
 				},
 				{
 					",ff",
 					":lua require('spectre').open_file_search()<cr>",
 					description = "Find and replace in file",
+					opts = silent_opts,
 				},
 			},
 		},
@@ -131,16 +188,22 @@ legendary.setup({
 		},
 
 		-- TODO-comment
-		{ "<leader>ft", ":TodoTelescope keywords=TODO,FIX,NOTE,BUG<cr>", description = "Find TODO comments" },
+		{
+			"<leader>ft",
+			":TodoTelescope keywords=TODO,FIX,NOTE,BUG<cr>",
+			description = "Find TODO comments",
+			opts = silent_opts,
+		},
 
 		-- Lazy git
-		{ "<leader>lg", ":LazyGit<CR>", description = "Open Lazy Git" },
+		{ "<leader>lg", ":LazyGit<CR>", description = "Open Lazy Git", opts = silent_opts },
 
 		-- Github Copilot
 		{
 			"<C-Tab>",
 			{ i = "<esc>:Copilot panel<CR>" },
 			description = "Open Github Copilot panel",
+			opts = silent_opts,
 		},
 
 		-- LSP
@@ -148,18 +211,58 @@ legendary.setup({
 			itemgroup = "LSP",
 			keymaps = {
 
-				{ "gR", ":Lspsaga lsp_finder<CR>", description = "Show definition and references" },
-				{ "gd", ":Lspsaga peek_definition<CR>", description = "Peek definition and make edits in window" },
-				{ "gD", ":Lspsaga goto_definition<CR>", description = "Go to definition" },
-				{ "gi", ":lua vim.lsp.buf.implementation()<CR>", description = "Go to implementation" },
-				{ "<leader>ca", ":Lspsaga code_action<CR>", description = "Run code action" },
-				{ "grn", ":Lspsaga rename<CR>", description = "Smart rename action" },
-				{ "<leader>D", ":Lspsaga show_line_diagnostics<CR>", description = "Show line diagnostics" },
-				{ "<leader>d", ":Lspsaga show_cursor_diagnostics<CR>", description = "Show cursor diagnostics" },
-				{ "[d", ":Lspsaga diagnostic_jump_prev<CR>", description = "Jump to previous diagnostic" },
-				{ "]d", ":Lspsaga diagnostic_jump_next<CR>", description = "Jump to next diagnostic" },
-				{ "gI", ":Lspsaga hover_doc<CR>", description = "Show documentation under cursor" },
-				{ "<C-s>", ":SymbolsOutline<CR>", description = "Toggle Symbols Outline" },
+				{
+					"gR",
+					":Lspsagl lsp_finder<CR>",
+					desgription = "Show definition and references",
+					opts = silent_opts,
+				},
+				{
+					"gd",
+					":Lspsaga peek_definition<CR>",
+					description = "Peek definition and make edits in window",
+					opts = silent_opts,
+				},
+				{ "gD", ":Lspsaga goto_definition<CR>", description = "Go to definition", opts = silent_opts },
+				{
+					"gi",
+					":lua vim.lsp.buf.implementation()<CR>",
+					description = "Go to implementation",
+					opts = silent_opts,
+				},
+				{ "<leader>ca", ":Lspsaga code_action<CR>", description = "Run code action", opts = silent_opts },
+				{ "grn", ":Lspsaga rename<CR>", description = "Smart rename action", opts = silent_opts },
+				{
+					"<leader>D",
+					":Lspsaga show_line_diagnostics<CR>",
+					description = "Show line diagnostics",
+					opts = silent_opts,
+				},
+				{
+					"<leader>d",
+					":Lspsaga show_cursor_diagnostics<CR>",
+					description = "Show cursor diagnostics",
+					opts = silent_opts,
+				},
+				{
+					"[d",
+					":Lspsaga diagnostic_jump_prev<CR>",
+					description = "Jump to previous diagnostic",
+					opts = silent_opts,
+				},
+				{
+					"]d",
+					":Lspsaga diagnostic_jump_next<CR>",
+					description = "Jump to next diagnostic",
+					opts = silent_opts,
+				},
+				{
+					"gI",
+					":Lspsaga hover_doc<CR>",
+					description = "Show documentation under cursor",
+					opts = silent_opts,
+				},
+				{ "<C-s>", ":SymbolsOutline<CR>", description = "Toggle Symbols Outline", opts = silent_opts },
 			},
 		},
 
@@ -168,14 +271,30 @@ legendary.setup({
 			itemgroup = "Harpoon",
 			keymaps = {
 
-				{ "<leader>ha", ":lua require('harpoon.mark').add_file()<cr>", description = "Add file to harpoon" },
+				{
+					"<leader>ha",
+					":lua require('harpoon.mark').add_file()<cr>",
+					description = "Add file to harpoon",
+					opts = silent_opts,
+				},
 				{
 					"<leader>ht",
 					":lua require('harpoon.ui').toggle_quick_menu()<cr>",
 					description = "Toggle Harpoon menu",
+					opts = silent_opts,
 				},
-				{ "<leader>h]", ":lua require('harpoon.ui').nav_next()<cr>", description = "Navigate next" },
-				{ "<leader>h[", ":lua require('harpoon.ui').nav_previous()<cr>", description = "Navigate previous" },
+				{
+					"<leader>h]",
+					":lua require('harpoon.ui').nav_next()<cr>",
+					description = "Navigate next",
+					opts = silent_opts,
+				},
+				{
+					"<leader>h[",
+					":lua require('harpoon.ui').nav_prev()<cr>",
+					description = "Navigate previous",
+					opts = silent_opts,
+				},
 			},
 		},
 
@@ -183,42 +302,76 @@ legendary.setup({
 		{
 			itemgroup = "NeoTest",
 			keymaps = {
-				{ "<leader>tr", ":lua require('neotest').run.run()<cr>", description = "Run nearest test" },
-				{ "<leader>tl", ":lua require('neotest').run.run_last()<cr>", description = "Run last test" },
-				{ "<leader>tx", ":lua require('neotest').run.stop()<cr>", description = "Stop testing" },
-				{ "<leader>to", ":lua require('neotest').output.open()<cr>", description = "Output" },
+				{
+					"<leader>tr",
+					":lua require('neotest').run.run()<cr>",
+					description = "Run nearest test",
+					opts = silent_opts,
+				},
+				{
+					"<leader>tl",
+					":lua require('neotest').run.run_last()<cr>",
+					description = "Run last test",
+					opts = silent_opts,
+				},
+				{
+					"<leader>tx",
+					":lua require('neotest').run.stop()<cr>",
+					description = "Stop testing",
+					opts = silent_opts,
+				},
+				{
+					"<leader>to",
+					":lua require('neotest').output.open()<cr>",
+					description = "Output",
+					opts = silent_opts,
+				},
 				{
 					"<leader>tO",
 					":lua require('neotest').output_panel.toggle()<cr>",
 					description = " Test Output panel",
+					opts = silent_opts,
 				},
-				{ "<leader>ts", ":lua require('neotest').summary.toggle()<cr>", description = "Test Summary" },
+				{
+					"<leader>ts",
+					":lua require('neotest').summary.toggle()<cr>",
+					description = "Test Summary",
+					opts = silent_opts,
+				},
 				-- { "<leader>Td", ":h neotest.diagnostic<cr>", description = "Test diagnostic" },
 				-- { "<leader>Ts", ":h neotest.status<cr>", description = "Test status sign" },
 				{
 					"<leader>tf",
 					":lua require('neotest').run.run(vim.fn.expand('%')) <cr>",
 					description = "Run current file",
+					opts = silent_opts,
 				},
 			},
 		},
 		{
 			itemgroup = "Trouble",
 			keymaps = {
-				{ "<leader>xx", ":TroubleToggle<cr>", description = "Toggle Trouble" },
+				{ "<leader>xx", ":TroubleToggle<cr>", description = "Toggle Trouble", opts = silent_opts },
 				{
 					"<leader>xw",
 					":TroubleToggle lsp_workspace_diagnostics<cr>",
 					description = "Toggle workspace diagnostics",
+					opts = silent_opts,
 				},
 				{
 					"<leader>xd",
 					":TroubleToggle lsp_document_diagnostics<cr>",
 					description = "Toggle document diagnostics",
+					opts = silent_opts,
 				},
-				{ "<leader>xl", ":TroubleToggle loclist<cr>", description = "Toggle loclist" },
-				{ "<leader>xq", ":TroubleToggle quickfix<cr>", description = "Toggle quickfix" },
-				{ "<leader>xR", ":TroubleToggle lsp_references<cr>", description = "Toggle references" },
+				{ "<leader>xl", ":TroubleToggle loclist<cr>", description = "Toggle loclist", opts = silent_opts },
+				{ "<leader>xq", ":TroubleToggle quickfix<cr>", description = "Toggle quickfix", opts = silent_opts },
+				{
+					"<leader>xR",
+					":TroubleToggle lsp_references<cr>",
+					description = "Toggle references",
+					opts = silent_opts,
+				},
 			},
 		},
 	},

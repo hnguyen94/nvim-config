@@ -75,10 +75,8 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["Comment.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/opt/Comment.nvim",
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
   ["FixCursorHold.nvim"] = {
@@ -213,7 +211,7 @@ _G.packer_plugins = {
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["leap.nvim"] = {
-    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\afg\nwhite\14nocombine\2\tbold\2\14LeapMatch\1\0\3\afg\tblue\14nocombine\2\tbold\2\23LeapLabelSecondary\1\0\3\afg\bred\14nocombine\2\tbold\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
+    config = { "\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\afg\nwhite\tbold\2\14LeapMatch\1\0\3\14nocombine\2\afg\tblue\tbold\2\23LeapLabelSecondary\1\0\3\14nocombine\2\afg\bred\tbold\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0" },
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/leap.nvim",
     url = "https://github.com/ggandor/leap.nvim"
@@ -222,6 +220,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/legendary.nvim",
     url = "https://github.com/mrjones2014/legendary.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0" },
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -314,16 +318,12 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
-    load_after = {
-      ["nvim-cmp"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
+    loaded = true,
+    path = "/Users/liam.ng/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "emmet-vim", "cmp-buffer", "cmp-cmdline", "nvim-autopairs", "cmp-path", "cmp-spell" },
+    after = { "cmp-spell", "emmet-vim", "cmp-buffer", "cmp-cmdline", "cmp-path" },
     config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26liam.plugins.nvim-cmp\frequire\0" },
     load_after = {
       ["friendly-snippets"] = true
@@ -517,34 +517,38 @@ time([[Defining packer_plugins]], false)
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nD\0\0\2\0\4\0\t6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0K\0\1\0\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
--- Config for: leap.nvim
-time([[Config for leap.nvim]], true)
-try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\afg\nwhite\14nocombine\2\tbold\2\14LeapMatch\1\0\3\afg\tblue\14nocombine\2\tbold\2\23LeapLabelSecondary\1\0\3\afg\bred\14nocombine\2\tbold\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
-time([[Config for leap.nvim]], false)
--- Config for: noice.nvim
-time([[Config for noice.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23liam.plugins.noice\frequire\0", "config", "noice.nvim")
-time([[Config for noice.nvim]], false)
--- Config for: neoscroll.nvim
-time([[Config for neoscroll.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27liam.plugins.neoscroll\frequire\0", "config", "neoscroll.nvim")
-time([[Config for neoscroll.nvim]], false)
 -- Config for: symbols-outline.nvim
 time([[Config for symbols-outline.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20symbols-outline\frequire\0", "config", "symbols-outline.nvim")
 time([[Config for symbols-outline.nvim]], false)
+-- Config for: leap.nvim
+time([[Config for leap.nvim]], true)
+try_loadstring("\27LJ\2\nö\3\0\0\5\0\22\00046\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\6\0005\4\a\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\b\0005\4\t\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\n\0005\4\v\0B\0\4\0016\0\3\0009\0\4\0009\0\5\0)\2\0\0'\3\f\0005\4\r\0B\0\4\0016\0\3\0009\0\14\0009\0\15\0005\2\16\0'\3\17\0B\0\3\0016\0\3\0009\0\14\0009\0\15\0005\2\18\0'\3\19\0B\0\3\0016\0\0\0'\2\1\0B\0\2\0029\0\20\0+\1\2\0=\1\21\0K\0\1\0*highlight_unlabeled_phase_one_targets\topts\6X\1\3\0\0\6x\6o\6x\1\3\0\0\6x\6o\bdel\vkeymap\1\0\3\14nocombine\2\afg\nwhite\tbold\2\14LeapMatch\1\0\3\14nocombine\2\afg\tblue\tbold\2\23LeapLabelSecondary\1\0\3\14nocombine\2\afg\bred\tbold\2\21LeapLabelPrimary\1\0\1\tlink\fComment\17LeapBackdrop\16nvim_set_hl\bapi\bvim\25add_default_mappings\tleap\frequire\0", "config", "leap.nvim")
+time([[Config for leap.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
 -- Config for: fidget.nvim
 time([[Config for fidget.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
 time([[Config for fidget.nvim]], false)
+-- Config for: noice.nvim
+time([[Config for noice.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23liam.plugins.noice\frequire\0", "config", "noice.nvim")
+time([[Config for noice.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: neoscroll.nvim
+time([[Config for neoscroll.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27liam.plugins.neoscroll\frequire\0", "config", "neoscroll.nvim")
+time([[Config for neoscroll.nvim]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
+time([[Config for lsp_signature.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
@@ -554,9 +558,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-surround', 'vim-repeat', 'vim-maximizer', 'vim-visual-multi', 'Comment.nvim', 'neotest'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-cmp', 'friendly-snippets', 'copilot.vim'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au CmdlineEnter * ++once lua require("packer.load")({'no-neck-pain.nvim', 'zen-mode.nvim', 'neorg'}, { event = "CmdlineEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-visual-multi', 'vim-surround', 'vim-repeat', 'vim-maximizer', 'neotest'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au CmdlineEnter * ++once lua require("packer.load")({'neorg', 'no-neck-pain.nvim', 'zen-mode.nvim'}, { event = "CmdlineEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'copilot.vim', 'friendly-snippets', 'nvim-cmp'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
