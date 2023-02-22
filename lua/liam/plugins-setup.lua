@@ -98,7 +98,6 @@ return packer.startup({
 		-- fuzzy finding w/ telescope
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 		use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-		use({ "mbbill/undotree" }) -- fuzzy finder
 
 		-- CMP
 		use({
