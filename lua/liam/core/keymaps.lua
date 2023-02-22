@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 -- Core keymaps
 keymap.set("n", "<leader>nh", ":silent! nohl<CR>")
+keymap.set("n", "q:", "<nop>", { noremap = true })
 
 keymap.set("n", "x", '"_x')
 
@@ -125,23 +126,40 @@ legendary.setup({
 					description = "List old files",
 					opts = silent_opts,
 				},
-
-				-- Telescope git
-				{ "<leader>gg", ":Gitsigns ", description = "Activate Gitsign" },
-				{ "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits", opts = silent_opts },
+				{ "<leader>fh", ":Telescope help_tags<cr>", description = "Vim help", opts = silent_opts },
+				{ "<leader>fk", ":Telescope keymaps<cr>", description = "Keymaps", opts = silent_opts },
+				{ "<leader>fO", ":Telescope vim_options<cr>", description = "Vim Options", opts = silent_opts },
 				{
-					"<leader>gfc",
-					":Telescope git_bcommits<cr>",
-					description = "List git commits for current file",
+					"<leader>f/",
+					":Telescope current_buffer_fuzzy_find<cr>",
+					description = "Fuzzy find in buffer",
 					opts = silent_opts,
 				},
-				{ "<leader>gb", ":Telescope git_branches<cr>", description = "List git branches", opts = silent_opts },
+				{ "<leader>f?", ":Telescope search_history<cr>", description = "", opts = silent_opts },
+				{ "<leader>f;", ":Telescope command_history<cr>", description = "Command History", opts = silent_opts },
 				{
-					"<leader>gs",
-					":Telescope git_status<cr>",
-					description = "List current changes with diff preview",
+					"<leader>fC",
+					":Telescope commands<cr>",
+					description = "execute command History",
 					opts = silent_opts,
-				}, -- might not needed
+				},
+
+				-- Telescope git
+				-- { "<leader>gg", ":Gitsigns ", description = "Activate Gitsign" },
+				-- { "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits", opts = silent_opts },
+				-- {
+				-- 	"<leader>gfc",
+				-- 	":Telescope git_bcommits<cr>",
+				-- 	description = "List git commits for current file",
+				-- 	opts = silent_opts,
+				-- },
+				-- { "<leader>gb", ":Telescope git_branches<cr>", description = "List git branches", opts = silent_opts },
+				-- {
+				-- 	"<leader>gs",
+				-- 	":Telescope git_status<cr>",
+				-- 	description = "List current changes with diff preview",
+				-- 	opts = silent_opts,
+				-- }, -- might not needed
 			},
 		},
 
