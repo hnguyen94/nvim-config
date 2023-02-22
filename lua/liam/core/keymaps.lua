@@ -95,8 +95,6 @@ legendary.setup({
 			opts = silent_opts,
 		},
 
-		-- For modifying keymaps in Telescope check Hydra as well
-		-- NOTE: Not sure how I can combine these two tools
 		{
 			itemgroup = "Telescope",
 			keymaps = {
@@ -143,23 +141,6 @@ legendary.setup({
 					description = "execute command History",
 					opts = silent_opts,
 				},
-
-				-- Telescope git
-				-- { "<leader>gg", ":Gitsigns ", description = "Activate Gitsign" },
-				-- { "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits", opts = silent_opts },
-				-- {
-				-- 	"<leader>gfc",
-				-- 	":Telescope git_bcommits<cr>",
-				-- 	description = "List git commits for current file",
-				-- 	opts = silent_opts,
-				-- },
-				-- { "<leader>gb", ":Telescope git_branches<cr>", description = "List git branches", opts = silent_opts },
-				-- {
-				-- 	"<leader>gs",
-				-- 	":Telescope git_status<cr>",
-				-- 	description = "List current changes with diff preview",
-				-- 	opts = silent_opts,
-				-- }, -- might not needed
 			},
 		},
 
