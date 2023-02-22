@@ -4,6 +4,12 @@ require("noice").setup({
 		long_message_to_split = true, -- long messages will be sent to a split
 	},
 	routes = {
+		-- {
+		-- 	filter = {
+		-- 		event = "msg_show",
+		-- 		find = "<Esc>: exit",
+		-- 	},
+		-- },
 		{
 			filter = {
 				event = "msg_show",

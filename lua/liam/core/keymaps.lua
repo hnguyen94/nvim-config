@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 -- Core keymaps
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<leader>nh", ":silent! nohl<CR>")
 
 keymap.set("n", "x", '"_x')
 
@@ -30,6 +30,18 @@ legendary.setup({
 		-- Legendary
 		{ "<leader>/", ":Legendary<cr>", description = "Open Legendary panep", opts = silent_opts },
 		{ ",a", "ggVG", description = "Select all" },
+		{
+			"<leader><Enter>",
+			":call append(line('.'), '')<cr>",
+			description = "Insert new line and stay in Normal mode",
+			opts = silent_opts,
+		},
+		{
+			"<leader><S-Enter>",
+			":call append(line('.')-1, '')<cr>",
+			description = "Insert above new line and stay in Normal mode",
+			opts = silent_opts,
+		},
 		{
 			"<leader>bd",
 			":%bd|e#|bd#<cr>|'\"",
@@ -60,8 +72,8 @@ legendary.setup({
 		},
 
 		-- Window management
-		{ "<C-w>m", ":MaximizerToggle<cr>", description = "Maximize current window" },
-		{ ",w", ":close<cr>", description = "Close window" },
+		{ "<C-w>m", ":MaximizerToggle<cr>", description = "Maximize current window", opts = silent_opts },
+		{ ",w", ":close<cr>", description = "Close window", opts = silent_opts },
 
 		-- Nerd tree
 		{ "<leader>0", ":NvimTreeToggle<CR>", description = "Toggle Nerdtree", opts = { silent = true } },
@@ -82,6 +94,8 @@ legendary.setup({
 			opts = silent_opts,
 		},
 
+		-- For modifying keymaps in Telescope check Hydra as well
+		-- NOTE: Not sure how I can combine these two tools
 		{
 			itemgroup = "Telescope",
 			keymaps = {
@@ -104,12 +118,6 @@ legendary.setup({
 					description = "List open buffers in currrent instance",
 					opts = silent_opts,
 				},
-				{
-					"<leader>fh",
-					":Telescope help_tags<cr>",
-					description = "List available help tags",
-					opts = silent_opts,
-				},
 				{ "<leader>fp", ":Telescope builtin<cr>", description = "List built in fuctions", opts = silent_opts },
 				{
 					"<leader>fo",
@@ -119,6 +127,7 @@ legendary.setup({
 				},
 
 				-- Telescope git
+				{ "<leader>gg", ":Gitsigns ", description = "Activate Gitsign" },
 				{ "<leader>gc", ":Telescope git_commits<cr>", description = "List git commits", opts = silent_opts },
 				{
 					"<leader>gfc",
@@ -262,7 +271,13 @@ legendary.setup({
 					description = "Show documentation under cursor",
 					opts = silent_opts,
 				},
-				{ "<C-s>", ":SymbolsOutline<CR>", description = "Toggle Symbols Outline", opts = silent_opts },
+				{ "<leader>so", ":SymbolsOutline<CR>", description = "Toggle Symbols Outline", opts = silent_opts },
+				{
+					"K",
+					":lua require('lsp_signature').toggle_float_win()<cr>",
+					description = "Toggle signature",
+					opts = silent_opts,
+				},
 			},
 		},
 

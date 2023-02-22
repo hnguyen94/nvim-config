@@ -246,7 +246,12 @@ return packer.startup({
 		use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
 		-- git integration
-		use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+		use({
+			"LEWIS6991/GITSIGNS.NVIM",
+			config = function()
+				require("gitsigns").setup()
+			end,
+		}) -- SHOW LINE MODIFICATIONS ON LEFT HAND SIDE
 
 		-- word navigation
 
@@ -293,6 +298,16 @@ return packer.startup({
 				vim.o.timeout = true
 				vim.o.timeoutlen = 300
 			end,
+		})
+
+		use({
+			"anuvyklack/hydra.nvim",
+			config = function()
+				require("liam.plugins.hydra")
+			end,
+			-- requires = {
+			-- 	"LEWIS6991/GITSIGNS.NVIM",
+			-- },
 		})
 
 		use("mrjones2014/legendary.nvim")
