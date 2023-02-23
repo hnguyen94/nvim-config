@@ -58,6 +58,14 @@ legendary.setup({
 			},
 		},
 
+		-- Illuminate
+		-- alias alt + ]
+		{ "‘", ":lua require('illuminate').goto_next_reference()<cr>", "Move to next reference" },
+		-- alias alt + [
+		{ "“", ":lua require('illuminate').goto_prev_reference()<cr>", "Move to previous reference" },
+		-- alias alt + v
+		{ "√", ":lua require('illuminate').textobj_select()<cr>", "Select current txtobjct" },
+
 		-- Terminal
 		{
 			"<leader>Tt",
