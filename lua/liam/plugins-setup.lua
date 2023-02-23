@@ -85,7 +85,14 @@ return packer.startup({
 
 		-- start
 		use("mhinz/vim-startify")
-		use("echasnovski/mini.nvim")
+
+		use({
+			"echasnovski/mini.nvim",
+			config = function()
+				require("liam.plugins.mini")
+			end,
+		})
+
 		use("rcarriga/nvim-notify")
 
 		use({
